@@ -1,0 +1,9 @@
+{:paths ["src"]
+ :deps {org.clojure/tools.deps.alpha   {:git/url "https://github.com/clojure/tools.deps.alpha"
+                                        :sha "8f8fc2571e721301b6d52e191129248355cb8c5a"}
+        org.clojure/tools.namespace    {:mvn/version "1.4.4"}
+        better-cond/better-cond        {:mvn/version "2.1.4"}
+        com.xtdb/xtdb-core             {:mvn/version "1.23.1"}
+        com.xtdb/xtdb-jdbc             {:mvn/version "1.23.1"}
+        com.xtdb/xtdb-rocksdb          {:mvn/version "1.23.1"}
+        metosin/malli                  {:mvn/version "0.16.1"}}}

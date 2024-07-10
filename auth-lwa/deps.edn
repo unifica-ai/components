@@ -1,0 +1,7 @@
+{:paths ["src" "resources"]
+ :deps {io.github.manetu/temporal-sdk {:git/url "https://github.com/kpassapk/temporal-clojure-sdk" :git/sha "7306ce21c89f118bb6edbb7567a969a0465015b9"}
+        clj-http/clj-http              {:mvn/version "3.12.3"}
+        unifica/biff-xtdb {:local/root "../biff-xtdb"}
+        unifica/connector {:local/root "../connector"}}
+ :aliases
+ {:dev {:extra-paths ["dev"]}}}

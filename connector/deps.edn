@@ -1,0 +1,2 @@
+{:paths ["src"]
+ :deps {unifica/biff-xtdb {:local/root "../biff-xtdb"}}}

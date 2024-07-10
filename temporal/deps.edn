@@ -1,2 +1,3 @@
 {:paths ["src"]
- :deps {io.github.manetu/temporal-sdk {:git/url "https://github.com/kpassapk/temporal-clojure-sdk" :git/sha "7306ce21c89f118bb6edbb7567a969a0465015b9"}}}
+ :deps {io.github.manetu/temporal-sdk {:git/url "https://github.com/kpassapk/temporal-clojure-sdk" :git/sha "7306ce21c89f118bb6edbb7567a969a0465015b9"}
+        org.clojure/tools.logging      {:mvn/version "1.2.4"}}}
