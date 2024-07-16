@@ -61,7 +61,7 @@
             (ts/schedule @schedule-client id cfg))))
       (-> ctx
           (assoc :temporal/client client)
-          (update :biff/stop conj #(run! twk/stop workers))
+          (update :biff/stop conj #(run! twk/stop @workers))
           (cond->
               use-workers (assoc :temporal/workers @workers)
               use-schedules (assoc :temporal/schedule-client @schedule-client))))))
