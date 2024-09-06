@@ -1,0 +1,2 @@
+{:paths ["src"]
+ :deps {com.wsscode/pathom3 {:mvn/version "2023.08.22-alpha"}}}
