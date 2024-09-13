@@ -1,11 +1,12 @@
 (ns unifica.temporal
   (:require
+   [clojure.tools.logging :as log]
    [temporal.client.core :as tc]
    [temporal.client.schedule :as ts]
    [temporal.client.worker :as twk]
-   [temporal.tls :as tls]
-   [clojure.tools.logging :as log])
-  (:import (io.temporal.client.schedules ScheduleException)))
+   [temporal.tls :as tls])
+  (:import
+   (io.temporal.client.schedules ScheduleException)))
 
 (defn- schedule-exists? [client id]
   (try
@@ -66,14 +67,3 @@
           (cond->
               use-workers (assoc :temporal/workers @workers)
               use-schedules (assoc :temporal/schedule-client @schedule-client))))))
-
-(defn create-workflow
-  "A convenience method for temporal.client.core/create-workflow."
-  [{:temporal/keys [client]} workflow opts]
-  (tc/create-workflow client workflow opts))
-
-(defn start [workflow params]
-  (tc/start workflow params))
-
-(defn get-result [workflow]
-  (tc/get-result workflow))
