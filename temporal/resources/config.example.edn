@@ -1,0 +1,25 @@
+{:temporal/target #or [#profile {:prod #biff/env "TEMPORAL_PROD_TARGET"
+                                  :default #biff/env "TEMPORAL_TARGET"}
+                        "localhost:7233"]
+ 
+ :temporal/ui-url #or [#profile {:prod #biff/env "TEMPORAL_PROD_UI_URL"
+                                 :default #biff/env "TEMPORAL_UI_URL"}
+                       "http://localhost:8233"]
+
+ :temporal/codec-server-allow-methods #profile {:prod     [:post :get :options]
+                                                :default  [:post :options]}
+
+ :temporal/codec-server-allow-headers #profile {:prod     [:content-type :x-namespace]
+                                                :default  [:content-type :x-namespace]}
+   
+ :temporal/namespace #or [#profile {:prod #biff/env "TEMPORAL_PROD_NAMESPACE"
+                                    :default #biff/env "TEMPORAL_NAMESPACE"}
+                          "default"]
+ :temporal/enable-https #profile {:prod true :default false}
+ :temporal/cert-path #or [#biff/env TEMPORAL_CLIENT_CERT_PATH "client.pem"]
+ :temporal/key-path #or [#biff/env TEMPORAL_CLIENT_KEY "client.key"]
+
+ :temporal/workflow-options #profile
+ {:dev {:task-queue                  :unifica.workflows/queue
+        :retry-options               {:maximum-attempts 1}
+        :workflow-execution-timeout  #unifica/duration [1 :minutes]}}}

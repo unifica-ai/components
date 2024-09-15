@@ -12,7 +12,7 @@
     {::id     (parse-uuid (.getWorkflowId d))
      ::run-id (parse-uuid (.getRunId d))}))
 
-(defn trigger
+(defn start
   "Starts a workflow.
    Options:
 
@@ -38,11 +38,6 @@
                     (tc/start             stub params))]
 
     (merge stub (p/datafy execution))))
-
-(defn- schedule-exists? [client id]
-  (try
-    (ts/describe client id)
-    (catch ScheduleException _ nil)))
 
 (defn create-workflow
   "A convenience method for temporal.client.core/create-workflow."

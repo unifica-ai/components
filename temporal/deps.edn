@@ -1,3 +1,4 @@
 {:paths ["src"]
  :deps {io.github.manetu/temporal-sdk {:mvn/version "1.0.3"}
-        org.clojure/tools.logging      {:mvn/version "1.2.4"}}}
+        ring-cors/ring-cors {:mvn/version "0.1.13"}
+        org.clojure/tools.logging  {:mvn/version "1.2.4"}}}
